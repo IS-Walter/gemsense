@@ -1,16 +1,11 @@
 <template lang="jade">
-  #app
-    a(v-link="'/'") index
-    a(v-link="'/test'") test
-    router-view 
+  .test_page
+    h1 haha Test
 </template>
 
 <script>
-import Hello from './components/Hello'
-
 export default {
   components: {
-    Hello
   }
 }
 </script>
