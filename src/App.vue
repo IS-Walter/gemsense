@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   #app
     a(v-link="'/'") index
     a(v-link="'/test'") test

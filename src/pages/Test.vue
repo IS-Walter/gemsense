@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   .test_page
     h1 haha Test
 </template>

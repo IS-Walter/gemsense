@@ -1,6 +1,8 @@
-<template lang="jade">
+<template lang="pug">
   .index_page
     h1 haha index
+    h2 hahah
+    h2 hasdasfdsadfasdf
 </template>
 
 <script>
