@@ -1,6 +1,6 @@
 <template lang="jade">
   .test_page
-    h1 haha Test2
+    h1 haha Test22222222
 </template>
 
 <script>
