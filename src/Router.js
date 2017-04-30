@@ -14,6 +14,10 @@ export default class extends VueRouter {
       '/test': {
         name: 'test',
         component: require('./pages/Test.vue')
+      },
+      '/test2': {
+        name: 'test2',
+        component: require('./pages/Test2.vue')
       }
     })
   }      // close constructor

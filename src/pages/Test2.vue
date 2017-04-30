@@ -1,17 +1,11 @@
-<template lang="pug">
-  #app
-    a(v-link="'/'") index
-    a(v-link="'/test'") test
-    a(v-link="'/test2'") test2
-    router-view 
+<template lang="jade">
+  .test_page
+    h1 haha Test2
 </template>
 
 <script>
-import Hello from './components/Hello'
-
 export default {
   components: {
-    Hello
   }
 }
 </script>
