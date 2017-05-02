@@ -1,5 +1,6 @@
 <template lang="pug">
   .index_page
+    h1 haha I am index
     section.banner
     section.product
     section.development

@@ -1,6 +1,6 @@
 <template lang="pug">
-  .test_page
-    h1 haha Test
+  .developer
+    h1 Developer
 </template>
 
 <script>

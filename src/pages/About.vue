@@ -1,20 +1,11 @@
 <template lang="pug">
-  #app
-    a(v-link="'/'") index
-    a(v-link="'/products'") Products
-    a(v-link="'/solutions'") Solutions
-    a(v-link="'/about'") About
-    a(v-link="'/developer'") Developer
-    a(v-link="")
-    router-view 
+  .about
+    h1 About
 </template>
 
 <script>
-import Hello from './components/Hello'
-
 export default {
   components: {
-    Hello
   }
 }
 </script>

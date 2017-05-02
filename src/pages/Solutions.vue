@@ -1,6 +1,6 @@
-<template lang="jade">
-  .test_page
-    h1 haha Test22222222
+<template lang="pug">
+  .solution
+    h1 Solutions
 </template>
 
 <script>
