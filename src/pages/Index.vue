@@ -1,5 +1,5 @@
 <template lang="pug">
-  .index_page
+  .index_page.container-fluid
     h1 haha I am index
     section.banner
     section.product
@@ -11,7 +11,6 @@
 <script>
 export default {
   components: {
-
   },
   data () {
     return {

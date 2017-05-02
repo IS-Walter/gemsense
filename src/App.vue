@@ -15,6 +15,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~bootstrap/dist/css/bootstrap.css";
 @import "./main.scss";
 
 html {
@@ -22,9 +23,6 @@ html {
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100%;
   width: 100vw;
 }
