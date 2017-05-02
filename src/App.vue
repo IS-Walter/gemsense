@@ -14,7 +14,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "./main.scss";
+
 html {
   height: 100%;
 }
@@ -24,14 +26,14 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
+  width: 100vw;
 }
 
 #app {
   color: #2c3e50;
-  margin-top: -100px;
-  max-width: 600px;
   font-family: Source Sans Pro, Helvetica, sans-serif;
   text-align: center;
+  width:100%;
 }
 
 #app a {
