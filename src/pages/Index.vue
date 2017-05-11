@@ -2,7 +2,7 @@
   .index_page.container-fluid
     h1 haha I am index
     section.banner
-    section.product
+    section.product 
     section.development
     section.idea
     section.start_today
