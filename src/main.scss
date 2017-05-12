@@ -9,44 +9,44 @@
 // @import "scss/_color.scss";
 // @import "scss/_position.scss";
 // @import "scss/_breakpoint.scss";
-// @import "scss/_mixin.scss";
+@import "scss/_mixin.scss";
 
-@mixin index_h1{
-	width: 582px;
-	text-align: center;
-	margin: 0 auto;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #979797;
-  font-family: $main_font_Thin;
-	font-size: 40px;
-	letter-spacing: 2.5px;
-	display: block;
-}
+// @mixin index_h1{
+// 	width: 582px;
+// 	text-align: center;
+// 	margin: 0 auto;
+// 	padding-bottom: 10px;
+// 	border-bottom: 1px solid #979797;
+//   font-family: $main_font_Thin;
+// 	font-size: 40px;
+// 	letter-spacing: 2.5px;
+// 	display: block;
+// }
 
-.development{
-	background-color: #fcc;
-}
+// .development{
+// 	background-color: #fcc;
+// }
 
-.idea{
+// .idea{
 
-	background-color: #f4f8fa;
-	padding: 55px 0;
-	h1{
-		@include index_h1;
-	}
-	.container{
-		margin-top: 40px;
+// 	background-color: #f4f8fa;
+// 	padding: 55px 0;
+// 	h1{
+// 		@include index_h1;
+// 	}
+// 	.container{
+// 		margin-top: 40px;
 		
-		.row:nth-child(2){
-			margin-top: 70px;
-		}
-	}
-	h2{
-		font-family: $main_font_Light;
-		font-size: 25px;
-		letter-spacing: 1.6px;
-		margin-bottom: 10px;
-	}
+// 		.row:nth-child(2){
+// 			margin-top: 70px;
+// 		}
+// 	}
+// 	h2{
+// 		font-family: $main_font_Light;
+// 		font-size: 25px;
+// 		letter-spacing: 1.6px;
+// 		margin-bottom: 10px;
+// 	}
 
-}
+// }
 

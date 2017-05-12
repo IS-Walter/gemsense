@@ -49,6 +49,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.header{
+  max-width: 1366px;  
+}
 .header li {
   float: left;
 }

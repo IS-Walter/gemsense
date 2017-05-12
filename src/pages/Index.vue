@@ -1,5 +1,5 @@
 <template lang="pug">
-  .index_page.container-fluid
+  .index_page
     h1 I am index
     section.banner
     section.product 
@@ -62,5 +62,30 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import '../scss/_variables.scss';
+@import '../scss/_mixin.scss';
+.idea{
+  background-color: #f4f8fa;
+  padding: 55px 0;
+  h1{
+    @include index_h1;
+  }
+  .container{
+    margin-top: 40px;
+    .row:nth-child(2){
+      margin-top: 70px;
+    }
+  }
+  h2{
+    font-family: $main_font_Light;
+    font-size: 25px;
+    letter-spacing: 1.6px;
+    margin-bottom: 10px;
+  }
+}
+
+.development{
+  background-color: #fcc;
+}
 </style>

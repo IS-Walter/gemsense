@@ -1,0 +1,16 @@
+// ==== base =========
+
+@mixin index_h1{
+	width: 582px;
+	text-align: center;
+	margin: 0 auto;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #979797;
+  font-family: $main_font_Thin;
+	font-size: 40px;
+	letter-spacing: 2.5px;
+	display: block;
+}
+
+
+
