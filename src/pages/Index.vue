@@ -1,10 +1,9 @@
 <template lang="pug">
   .index_page
-    h1 I am index
     section.banner
+
     section.product 
     section.development
-      h1 CASE STUDIES
     section.idea
       h1 CASE STUDIES
       .container

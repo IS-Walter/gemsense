@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Header from '../src/components/Header.vue'
+import Header from 'src/components/Header.vue'
 
 export default {
   components: {
@@ -16,12 +16,11 @@ export default {
 
 <style lang="scss">
 @import "~bootstrap/dist/css/bootstrap.css";
-@import "./main.scss";
+@import "~src/main.scss";
 
 html {
   height: 100%;
 }
-
 body {
   height: 100%;
   width: 100vw;
@@ -32,15 +31,5 @@ body {
   font-family: Source Sans Pro, Helvetica, sans-serif;
   text-align: center;
   width:100%;
-}
-
-#app a {
-  color: #42b983;
-  text-decoration: none;
-}
-
-.logo {
-  width: 100px;
-  height: 100px
 }
 </style>

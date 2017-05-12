@@ -1,8 +1,8 @@
 <template lang="pug">
-  .header.container-fluid
-    ul.col-md-12
+  .header.container-fluid.no_pad
+    ul.col-md-12.menu
       li.col-md-3
-        a(v-link="'/'") index
+        a(v-link="'/'") Logo
       li.col-md-offset-1.col-md-1
         a(v-link="'/products'") Products
       li.col-md-1
@@ -11,10 +11,8 @@
         a(v-link="'/about'") About
       li.col-md-1
         a(v-link="'/developer'") Developer
-      li.col-md-1.col-md-offset-2
-        span hahah
-      li.col-md-1
-        span hahah
+      li.col-md-1.col-md-offset-3.support
+        span Support
 </template>
 
 <script>
@@ -49,10 +47,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../scss/_variables.scss';
+
 .header{
-  max-width: 1366px;  
 }
-.header li {
-  float: left;
+.menu{
+  padding: 30px 68px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.46);
+  background-image: radial-gradient(circle at 49% 47%, #00345e, #001c2e);
+  & li{
+    color: #fff;
+    a{
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-family: $main_font;
+    }
+  }
+  .support{
+    border-left: 1px solid #fff;
+  }
 }
+
 </style>

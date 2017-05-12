@@ -1,15 +1,15 @@
 // ==== base =========
 @import "scss/_variables.scss";
+@import "scss/_reset.scss";
+@import "scss/_position.scss";
+@import "scss/_mixin.scss";
 // @import "scss/_prefix.scss";
 // @import "scss/_animation.scss";
-@import "scss/_reset.scss";
 // @import "scss/_base.scss";
 // @import "scss/_buttons.scss";
 // @import "scss/_space.scss";
 // @import "scss/_color.scss";
-// @import "scss/_position.scss";
 // @import "scss/_breakpoint.scss";
-@import "scss/_mixin.scss";
 
 // @mixin index_h1{
 // 	width: 582px;
