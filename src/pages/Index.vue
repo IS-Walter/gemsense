@@ -1,39 +1,45 @@
 <template lang="pug">
-  .index_page
-    section.banner
-
-    section.product 
-    section.development
-    section.idea
-      h1 CASE STUDIES
+.container-fluid
+  .row
+    .index_page
+      section.banner.col-md-12
+        .row
+          Banner
+      section.product 
+      section.development
       .container
-        .row
-          .col-sm-4.case
-            h2 Healthcare
-            img.img-responsive(src="../assets/index/case1.jpg")
-          .col-sm-4.case
-            h2 Immersive VR Experie
-            img.img-responsive(src="../assets/index/case2.jpg")
-          .col-sm-4.case
-            h2 Industrial Tracking
-            img.img-responsive(src="../assets/index/case3.jpg")
-        .row
-          .col-sm-4.case
-            h2 Remote Monitoring
-            img.img-responsive(src="../assets/index/case4.jpg")
-          .col-sm-4.case
-            h2 Smart Office
-            img.img-responsive(src="../assets/index/case5.jpg")
-          .col-sm-4.case
-            h2 Activities Tracking
-            img.img-responsive(src="../assets/index/case6.jpg")
-      .btn_learnMore Learn More
-    section.start_today
+        section.idea.col-md-12
+          h1 CASE STUDIES
+          br
+          .row
+            .col-sm-4.case
+              h2 Healthcare
+              img.img-responsive(src="../assets/index/case1.jpg")
+            .col-sm-4.case
+              h2 Immersive VR Experie
+              img.img-responsive(src="../assets/index/case2.jpg")
+            .col-sm-4.case
+              h2 Industrial Tracking
+              img.img-responsive(src="../assets/index/case3.jpg")
+          .row
+            .col-sm-4.case
+              h2 Remote Monitoring
+              img.img-responsive(src="../assets/index/case4.jpg")
+            .col-sm-4.case
+              h2 Smart Office
+              img.img-responsive(src="../assets/index/case5.jpg")
+            .col-sm-4.case
+              h2 Activities Tracking
+              img.img-responsive(src="../assets/index/case6.jpg")
+          .btn_learnMore Learn More
+      section.start_today
 </template>
 
 <script>
+import Banner from '../pages/Banner.vue'
 export default {
   components: {
+    'banner': Banner
   },
   data () {
     return {
