@@ -23,6 +23,11 @@
       img.img-responsive(v-bind:src='roundB3')
     .roundB4.round
       img.img-responsive(v-bind:src='roundB4')
+  .slogan
+    h1 Lead your Businesses
+    h1 to the IOT ERA
+  .detail
+    p Gemsense acts as the back-bone of you Internet of Things project by providing a combination of sensing technologies, rapid developing and business strategy. 
 </template>
 
 <script>
@@ -69,7 +74,35 @@ export default {
 .banner{
   height: 690px;
   padding-top: 70px;
-  background-color: #000;
+  background-image: radial-gradient(circle at 49% 47%, #00345e, #001c2e);
+  color: #fff;
+  position: relative;
+}
+.slogan{
+  width: 770px;
+  height: 140px;
+  font-size: 60px;
+  position: absolute;
+  top: 200px;
+  left: 0;
+  padding-left: 57px;
+  h1 {
+    text-transform: uppercase;
+    text-align: left;
+    white-space: nowrap;
+  }
+}
+.detail{
+  padding-left: 68px;
+  position: absolute;
+  top: 340px;
+  left: 0;
+  width: 669px;
+  height: 86px;
+  p{
+    letter-spacing: 1px; 
+    text-align:justify;
+  }
 }
 .circleBox{
   position: relative;
@@ -137,7 +170,7 @@ export default {
       margin-top: 68px;
       margin-left: -74px;
     }
-    opacity: .55;
+    opacity: .3;
     animation: clockwise 17s -4s linear infinite;
   }
   .roundB2 {
@@ -152,6 +185,7 @@ export default {
       margin-left: 296px;
       margin-top: -15px;
     }
+    opacity: .55;
     animation: clockwise 21s -10s linear infinite;
   }
   .roundB4 {
