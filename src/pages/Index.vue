@@ -12,43 +12,21 @@
         h1 CASE STUDIES
         //- br
         .row
-          .col-sm-4.case
-            h2 Healthcare
-            img.img-responsive(src="../assets/index/case1.jpg")
-          .col-sm-4.case
-            h2 Immersive VR Experie
-            img.img-responsive(src="../assets/index/case2.jpg")
-          .col-sm-4.case
-            h2 Industrial Tracking
-            img.img-responsive(src="../assets/index/case3.jpg")
+          .col-sm-4.case(v-for="case in caseAry | limitBy 3")
+            h2 {{case.title}}
+            img.img-responsive(v-bind:src="case.url")
         .row
-          .col-sm-4.case
-            h2 Remote Monitoring
-            img.img-responsive(src="../assets/index/case4.jpg")
-          .col-sm-4.case
-            h2 Smart Office
-            img.img-responsive(src="../assets/index/case5.jpg")
-          .col-sm-4.case
-            h2 Activities Tracking
-            img.img-responsive(src="../assets/index/case6.jpg")
+          .col-sm-4.case(v-for="case in caseAry | limitBy 3 3")
+            h2 {{case.title}}
+            img.img-responsive(v-bind:src="case.url")
         a.btn_learnMore Learn More
-          
-          
 
       section.start_today
         h1 OUR PARTNER & CUSTOMER
         p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit sint ex dolore dolorum doloremque culpa sed aspernatur obcaecati, neque ipsum amet velit quia expedita ut facilis, reprehenderit quis veritatis autem eligendi delectus necessitatibus quo maxime inventore. Corporis cupiditate officiis id possimus minus, quaerat magni. Eligendi perferendis ipsam aut itaque blanditiis?
         .partner
-          img(src="../assets/index/partner1.png", alt="")
-          img(src="../assets/index/partner2.png", alt="")
-          img(src="../assets/index/partner3.png", alt="")
-          img(src="../assets/index/partner4.png", alt="")
-          img(src="../assets/index/partner5.png", alt="")
-          img(src="../assets/index/partner1.png", alt="")
-          img(src="../assets/index/partner2.png", alt="")
-          img(src="../assets/index/partner3.png", alt="")
-          img(src="../assets/index/partner4.png", alt="")
-          img(src="../assets/index/partner5.png", alt="")            
+          img(v-for="url in partnerAry" v-bind:src="url", alt="")
+          img(v-for="url in partnerAry" v-bind:src="url", alt="")
 </template>
 
 <script>
@@ -59,7 +37,40 @@ export default {
   },
   data () {
     return {
-      testArray: 'hshs'
+      testArray: 'hshs',
+      caseAry: [
+        {
+          title: 'Healthcare',
+          url: require('../assets/index/case1.jpg')
+        },
+        {
+          title: 'Immersive VR Experie',
+          url: require('../assets/index/case2.jpg')
+        },
+        {
+          title: 'Industrial Tracking',
+          url: require('../assets/index/case3.jpg')
+        },
+        {
+          title: 'Remote Monitoring',
+          url: require('../assets/index/case4.jpg')
+        },
+        {
+          title: 'Smart Office',
+          url: require('../assets/index/case5.jpg')
+        },
+        {
+          title: 'Activities Tracking',
+          url: require('../assets/index/case6.jpg')
+        }
+      ],
+      partnerAry: [
+        require('../assets/index/partner1.png'),
+        require('../assets/index/partner2.png'),
+        require('../assets/index/partner3.png'),
+        require('../assets/index/partner4.png'),
+        require('../assets/index/partner5.png')
+      ]
     }
   },
   computed: {
