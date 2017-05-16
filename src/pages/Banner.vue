@@ -14,6 +14,8 @@
         - var Cs2 = [7,8,9,10,11,12]
         for c in Cs2
           i(class='circle cir' + c)
+    .topNarrowLine
+      .line
   .circleBox
     .roundBig.round
       img.img-responsive(v-bind:src='roundBig')
@@ -192,6 +194,18 @@ export default {
   0% { transform: rotateZ(0deg);}
   100% { transform: rotateZ(-360deg);}
 }
+@keyframes toLeft{
+  0% {left: -100%;}
+  10% {left: 200%;}
+  11% {left: -100%; opacity: 0}
+  100% {left: -100%; opacity: 0}
+}
+@keyframes toRight{
+  0% {left: 200%;}
+  10% {left: -100%;}
+  11% {left: 200%; opacity: 0}
+  100% {left: 200%; opacity: 0}
+}
 .banner{
   height: 690px;
   padding-top: 70px;
@@ -362,6 +376,21 @@ export default {
   }
   &.opacity1{
     opacity:.1;
+  }
+}
+.topNarrowLine{
+  position: absolute;
+  top:30px;
+  width: 100%;
+  height: 5px;
+  & .line {
+    position: absolute;
+    left:0;
+    height:100%;
+    width: 345px;
+    background-color: #fff;
+    opacity: .3;
+    animation: toRight 30s -59s linear infinite;
   }
 }
 </style>
