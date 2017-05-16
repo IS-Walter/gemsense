@@ -3,7 +3,7 @@
   .background
     .circle_group(
       v-for="c in circlesAry" 
-      v-bind:class="{opacity: c.opacity, large: c.size === 'lg', small: c.size === 'sm'}"
+      v-bind:class="{opacity3: c.opacity === 3, opacity1 : c.opacity === 1, large: c.size === 'lg', small: c.size === 'sm', xLarge: c.size === 'xl'}"
       v-bind:style="getPos(c)"
       v-bind:data-index="c._id")
       .top
@@ -66,39 +66,103 @@ export default {
       circlesAry: [
         {
           _id: 1,
-          opacity: true,
+          opacity: 1,
           size: 'lg',
           posX: 191,
           posY: 86
         },
         {
           _id: 2,
-          opacity: true,
+          opacity: 1,
           size: 'lg',
           posX: 172,
           posY: 130
         },
         {
           _id: 3,
-          opacity: true,
+          opacity: 1,
           size: 'lg',
           posX: 272,
           posY: 120
         },
         {
           _id: 4,
-          opacity: true,
+          opacity: 1,
           size: 'lg',
           posX: 482,
           posY: 125
         },
         {
           _id: 5,
-          opacity: false,
+          opacity: 0,
           size: 'sm',
           posX: 582,
           posY: 75
+        },
+        {
+          _id: 6,
+          opacity: 1,
+          size: 'xl',
+          posX: 861,
+          posY: 69
+        },
+        {
+          _id: 7,
+          opacity: 1,
+          size: 'xl',
+          posX: 911,
+          posY: 105
+        },
+        {
+          _id: 8,
+          opacity: 3,
+          size: 'xl',
+          posX: 1326,
+          posY: 470
+        },
+        {
+          _id: 9,
+          opacity: 3,
+          size: 'xl',
+          posX: 1026,
+          posY: 583
+        },
+        {
+          _id: 10,
+          opacity: 0,
+          size: 'sm',
+          posX: 776,
+          posY: 483
+        },
+        {
+          _id: 11,
+          opacity: 3,
+          size: 'sm',
+          posX: 656,
+          posY: 583
+        },
+        {
+          _id: 12,
+          opacity: 3,
+          size: 'md',
+          posX: 526,
+          posY: 523
+        },
+        {
+          _id: 13,
+          opacity: 3,
+          size: 'xl',
+          posX: 326,
+          posY: 643
+        },
+        {
+          _id: 14,
+          opacity: 3,
+          size: 'xl',
+          posX: 146,
+          posY: 650
         }
+
       ]
     }
   },
@@ -138,7 +202,6 @@ export default {
 .background{
   width: 100%;
   height: 100%;
-  outline: 1px solid #f00;
   position: absolute;
   top:0;
   left:0;
@@ -285,14 +348,20 @@ export default {
   &.large{
     transform: scale(1.3,1.3);
   }
+  &.xLarge{
+    transform: scale(1.6, 1.6);
+  }
   &.small{
     transform: scale(0.7, 0.7);
     & .bottom{
       margin-top: -6px;
     }
   }
-  &.opacity{
+  &.opacity3{
     opacity:.3;
+  }
+  &.opacity1{
+    opacity:.1;
   }
 }
 </style>
