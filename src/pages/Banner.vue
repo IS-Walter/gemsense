@@ -1,5 +1,19 @@
 <template lang="pug">
 .banner
+  .background
+    .circle_group(
+      v-for="c in circlesAry" 
+      v-bind:class="{opacity: c.opacity, large: c.size === 'lg', small: c.size === 'sm'}"
+      v-bind:style="getPos(c)"
+      v-bind:data-index="c._id")
+      .top
+        - var Cs1 = [1,2,3,4,5,6]
+        for c in Cs1
+          i(class='circle cir' + c)
+      .bottom
+        - var Cs2 = [7,8,9,10,11,12]
+        for c in Cs2
+          i(class='circle cir' + c)
   .circleBox
     .roundBig.round
       img.img-responsive(v-bind:src='roundBig')
@@ -48,12 +62,55 @@ export default {
       roundB1: require('../assets/banner/roundB-1.svg'),
       roundB2: require('../assets/banner/roundB-2.svg'),
       roundB3: require('../assets/banner/roundB-3.svg'),
-      roundB4: require('../assets/banner/roundB-4.svg')
+      roundB4: require('../assets/banner/roundB-4.svg'),
+      circlesAry: [
+        {
+          _id: 1,
+          opacity: true,
+          size: 'lg',
+          posX: 191,
+          posY: 86
+        },
+        {
+          _id: 2,
+          opacity: true,
+          size: 'lg',
+          posX: 172,
+          posY: 130
+        },
+        {
+          _id: 3,
+          opacity: true,
+          size: 'lg',
+          posX: 272,
+          posY: 120
+        },
+        {
+          _id: 4,
+          opacity: true,
+          size: 'lg',
+          posX: 482,
+          posY: 125
+        },
+        {
+          _id: 5,
+          opacity: false,
+          size: 'sm',
+          posX: 582,
+          posY: 75
+        }
+      ]
     }
   },
   computed: {
   },
   methods: {
+    getPos (c) {
+      return {
+        left: `${c.posX}px`,
+        top: `${c.posY}px`
+      }
+    }
   }, // close methods
   ready () {
   },
@@ -77,6 +134,14 @@ export default {
   background-image: radial-gradient(circle at 49% 47%, #00345e, #001c2e);
   color: #fff;
   position: relative;
+}
+.background{
+  width: 100%;
+  height: 100%;
+  outline: 1px solid #f00;
+  position: absolute;
+  top:0;
+  left:0;
 }
 .slogan{
   width: 770px;
@@ -194,6 +259,40 @@ export default {
       margin-left: 413px;
     }
     animation: counterClockwise 4s -2.2s linear infinite;
+  }
+}
+.circle_group{
+  position: absolute;
+  width: 102px;
+  height: 30px;
+  padding: 1px;
+  .top, .bottom{
+    padding:1px;
+  }
+  .circle{
+    display:inline-block;
+    // float: left;
+    width: 7px;
+    height:7px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-right: 3px;
+  }
+  .bottom{
+    margin-top:-10px;
+    margin-left: 24px;
+  }
+  &.large{
+    transform: scale(1.3,1.3);
+  }
+  &.small{
+    transform: scale(0.7, 0.7);
+    & .bottom{
+      margin-top: -6px;
+    }
+  }
+  &.opacity{
+    opacity:.3;
   }
 }
 </style>
