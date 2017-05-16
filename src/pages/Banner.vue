@@ -186,26 +186,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@keyframes clockwise{
-  0% { transform: rotateZ(0deg);}
-  100% { transform: rotateZ(360deg);}
-}
-@keyframes counterClockwise{
-  0% { transform: rotateZ(0deg);}
-  100% { transform: rotateZ(-360deg);}
-}
-@keyframes toLeft{
-  0% {left: -100%;}
-  10% {left: 200%;}
-  11% {left: -100%; opacity: 0}
-  100% {left: -100%; opacity: 0}
-}
-@keyframes toRight{
-  0% {left: 200%;}
-  10% {left: -100%;}
-  11% {left: 200%; opacity: 0}
-  100% {left: 200%; opacity: 0}
-}
 .banner{
   height: 690px;
   padding-top: 70px;
@@ -216,9 +196,11 @@ export default {
 .background{
   width: 100%;
   height: 100%;
-  position: absolute;
-  top:0;
-  left:0;
+  max-width: 1366px;
+  position: relative;
+  margin-top: -70px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .slogan{
   width: 770px;
@@ -247,8 +229,9 @@ export default {
   }
 }
 .circleBox{
-  position: relative;
-  margin-left: 52%;
+  position: absolute;
+  left: 52%;
+  top: 70px;
   width: 527px;
   height: 527px;
   & .round{
