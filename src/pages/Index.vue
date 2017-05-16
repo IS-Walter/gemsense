@@ -21,12 +21,14 @@
             img.img-responsive(v-bind:src="case.url")
         a.btn_learnMore Learn More
 
-      section.start_today
+      section.start_today.col-md-12
         h1 OUR PARTNER & CUSTOMER
         p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit sint ex dolore dolorum doloremque culpa sed aspernatur obcaecati, neque ipsum amet velit quia expedita ut facilis, reprehenderit quis veritatis autem eligendi delectus necessitatibus quo maxime inventore. Corporis cupiditate officiis id possimus minus, quaerat magni. Eligendi perferendis ipsam aut itaque blanditiis?
         .partner
-          img(v-for="url in partnerAry" v-bind:src="url", alt="")
-          img(v-for="url in partnerAry" v-bind:src="url", alt="")
+          a(v-for="link in partnerAry | limitBy 5", v-bind:href="link.url") 
+            img(v-bind:src="link.Picurl", alt="")
+          a(v-for="link in partnerAry | limitBy 5", v-bind:href="link.url") 
+            img(v-bind:src="link.Picurl", alt="")
 </template>
 
 <script>
@@ -65,11 +67,26 @@ export default {
         }
       ],
       partnerAry: [
-        require('../assets/index/partner1.png'),
-        require('../assets/index/partner2.png'),
-        require('../assets/index/partner3.png'),
-        require('../assets/index/partner4.png'),
-        require('../assets/index/partner5.png')
+        {
+          url: 'http://cn.vuejs.org/v2/guide/',
+          Picurl: require('../assets/index/partner1.png')
+        },
+        {
+          url: 'https://www.facebook.com/',
+          Picurl: require('../assets/index/partner2.png')
+        },
+        {
+          url: 'https://www.facebook.com/',
+          Picurl: require('../assets/index/partner3.png')
+        },
+        {
+          url: 'https://www.facebook.com/',
+          Picurl: require('../assets/index/partner4.png')
+        },
+        {
+          url: 'https://www.facebook.com/',
+          Picurl: require('../assets/index/partner5.png')
+        }
       ]
     }
   },
@@ -126,7 +143,8 @@ export default {
 }
 
 .start_today{
-   h1{
+  padding-top: 50px;
+  h1{
     @include index_h1;
     margin-bottom: 20px;
   }
@@ -136,12 +154,22 @@ export default {
     font-family: $main_font_Light;
     font-size: 22px;
     line-height: 30px;
+  }
+  .partner{
+    @include center;
+    width: 95%;
+    margin-top: 60px;
+    margin-bottom: 80px;
+    a{
+      display: inline-block;
+      width: 20%;
+    }
   } 
 }
 
-
 .btn_learnMore{
   @include center;
+  display: block;
   width: percentage(570px/$wrap_w);
   padding: 25px 0;
   font-size: 30px;
@@ -152,6 +180,7 @@ export default {
   color: #fff;
   box-shadow: 1px 5px 15px 0 rgba(0, 0, 0, 0.25);
 }
+
 
 
 </style>
