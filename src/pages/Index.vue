@@ -29,6 +29,29 @@
             img(v-bind:src="link.Picurl", alt="")
           a(v-for="link in partnerAry | limitBy 5", v-bind:href="link.url") 
             img(v-bind:src="link.Picurl", alt="")
+      footer.col-md-12
+        h3 About Gemsense
+        ul.social
+          li
+            i.fa.fa-twitter(aria-hidden="true")
+          li  
+            i.fa.fa-pinterest-p(aria-hidden="true")
+          li
+            i.fa.fa-linkedin(aria-hidden="true")
+          li
+            i.fa.fa-instagram(aria-hidden="true")
+          li
+            i.fa.fa-google-plus(aria-hidden="true")
+          li
+            i.fa.fa-facebook(aria-hidden="true")  
+        ul.contact  
+          li.mail 
+            a(href='mailto:Gemsense@gmail.com') Gemsense@gmail.com
+          li.website 
+            a(href='http://Gemsense.com') http://Gemsense.com
+        ul.copyright
+          li Hosting Sponsored by Wendy - managed by Gemsense
+          li Copyright @2017 -Gemsense - All rights reserved - Gemsense is released under the MIT license
 </template>
 
 <script>
@@ -167,7 +190,32 @@ export default {
   } 
 }
 
+footer{
+  background-color: #1e323d;
+  color: #fff;
+  font-family: $main_font_r;
+  text-align: left;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  h3{
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+  .social>li{
+    display: inline-block;
+    font-size: 24px;
+    width: 45px;
+    height: 45px;
+    background-color: #fcc;
+    border-radius: 50%;
+    line-height: 45px;
+    text-align: center;
+  }
+  .contact>li,.copyright>li{
+    line-height: 30px;
+  }
 
+}
 
 
 
