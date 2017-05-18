@@ -30,20 +30,10 @@
           a(v-for="link in partnerAry | limitBy 5", v-bind:href="link.url") 
             img(v-bind:src="link.Picurl", alt="")
       footer.col-md-12
-        h3 About Gemsense
+        h3 About Gemsense 
         ul.social
-          li
-            i.fa.fa-twitter(aria-hidden="true")
-          li  
-            i.fa.fa-pinterest-p(aria-hidden="true")
-          li
-            i.fa.fa-linkedin(aria-hidden="true")
-          li
-            i.fa.fa-instagram(aria-hidden="true")
-          li
-            i.fa.fa-google-plus(aria-hidden="true")
-          li
-            i.fa.fa-facebook(aria-hidden="true")  
+          li(v-for="icon in iconAry| limitBy 6",v-bind:style="{ 'background-color': icon.icon_bg}")
+            i(class="fa"+" "+"{{icon.icon_name}}",aria-hidden="true")
         ul.contact  
           li.mail 
             a(href='mailto:Gemsense@gmail.com') Gemsense@gmail.com
@@ -109,6 +99,32 @@ export default {
         {
           url: 'https://www.facebook.com/',
           Picurl: require('../assets/index/partner5.png')
+        }
+      ],
+      iconAry: [
+        {
+          icon_name: 'fa-twitter',
+          icon_bg: '#30a6cf'
+        },
+        {
+          icon_name: 'fa-pinterest-p',
+          icon_bg: '#c62632'
+        },
+        {
+          icon_name: 'fa-linkedin',
+          icon_bg: '#1977a6'
+        },
+        {
+          icon_name: 'fa-instagram',
+          icon_bg: '#427399'
+        },
+        {
+          icon_name: 'fa-google-plus',
+          icon_bg: '#db4d3f'
+        },
+        {
+          icon_name: 'fa-facebook',
+          icon_bg: '#3d5b96'
         }
       ]
     }
@@ -197,22 +213,32 @@ footer{
   text-align: left;
   padding-top: 50px;
   padding-bottom: 50px;
+  padding-left: percentage(90px/$wrap_w);
   h3{
     font-size: 24px;
     letter-spacing: 1px;
   }
-  .social>li{
-    display: inline-block;
-    font-size: 24px;
-    width: 45px;
-    height: 45px;
-    background-color: #fcc;
-    border-radius: 50%;
-    line-height: 45px;
-    text-align: center;
+  .social{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    >li{
+      display: inline-block;
+      font-size: 26px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      line-height: 45px;
+      text-align: center;
+      margin-right: 30px;
+    }
   }
-  .contact>li,.copyright>li{
-    line-height: 30px;
+  .contact,.copyright{
+    >li{
+      line-height: 35px;
+    }
+  }
+  .contact{
+    margin-bottom: 10px;
   }
 
 }

@@ -17,7 +17,7 @@ export default {
 <style lang="scss">
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~src/main.scss";
-@import "~https://use.fontawesome.com/106dbcaac0.css";
+@import "~font-awesome/css/font-awesome.min.css";
 
 html {
   height: 100%;
