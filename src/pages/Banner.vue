@@ -355,16 +355,32 @@ export default {
     }
   }
   &.opacity3{
-    opacity:.3;
+    & .circle{
+      opacity:.3;
+    }
   }
   &.opacity1{
-    opacity:.1;
+    & .circle{
+      opacity:.1;
+    }
   }
 }
 
-@for $i from 1 through 14{
+@for $i from 0 through 14{
   #cGroup#{$i}{
-    // opacity:1;
+    @for $j from 1 through 6{
+      $delay: $j * -0.1s;
+      & .top > .circle:nth-child(#{$j}){
+        animation: flash 1s $delay linear infinite;
+      }
+    }
+    @for $k from 1 through 6{
+      $id: $k + 6;
+      $delay2: $id * -0.1s;
+      & .bottom > .circle:nth-child(#{$k}){
+        animation: flash 1s $delay2 linear infinite;
+      } 
+    }
   }
 }
 
