@@ -429,6 +429,17 @@ export default {
     position: absolute;
     left:0;
     height: 100%;
+    overflow: hidden;
+    &::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      bottom: -50%;
+      left: -50%;
+      background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+      transform: rotateZ(60deg) translate(-5em, 7.5em);
+    }
   }
 }
 
@@ -463,6 +474,9 @@ export default {
   & .line{
     height: 100%;
     width: 576px;
+    &:after{
+      animation: sheen 12s -3s linear infinite;
+    }
   }
 }
 .bottomWideLine{
@@ -480,10 +494,16 @@ export default {
   & .line3{
     width: 60px;
     left: 17%;
+    // &:after{
+    //   animation: sheen 10s -3s linear infinite;
+    // }
   }
   & .line4{
     width: 360px;
     left: 23%;
+    &:after{
+      animation: sheen 10s -7s linear infinite;
+    }
   }
 }
 .bottomNarrowLine{
@@ -499,6 +519,7 @@ export default {
     width: 273px;
     height: 100%;
     left:13%;
+    animation: toLeft 27s -9s linear infinite;
   }
   & .line3{
     width:63px;

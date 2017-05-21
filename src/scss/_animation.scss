@@ -7,13 +7,13 @@
   0% { transform: rotateZ(0deg);}
   100% { transform: rotateZ(-360deg);}
 }
-@keyframes toLeft{
+@keyframes toRight{
   0% {left: -100%;}
   10% {left: 200%;}
   11% {left: -100%; opacity: 0}
   100% {left: -100%; opacity: 0}
 }
-@keyframes toRight{
+@keyframes toLeft{
   0% {left: 200%;}
   10% {left: -100%;}
   11% {left: 200%; opacity: 0}
@@ -64,4 +64,12 @@
   }
 }
 
-
+@keyframes sheen {
+  0%{}
+  5% {
+    transform: rotateZ(60deg) translate(7em, -18em);
+  }
+  100% {
+    transform: rotateZ(60deg) translate(7em, -18em);
+  }
+}
