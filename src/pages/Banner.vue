@@ -16,6 +16,21 @@
           i(class='circle cir' + c)
     .topNarrowLine
       .line
+    .topThreeLine
+      .line
+      .line
+      .line
+    .middleWideLine
+      .line
+    .bottomWideLine
+      .line.line1
+      .line.line2
+      .line.line3
+      .line.line4
+    .bottomNarrowLine
+      .line.line1
+      .line.line2
+      .line.line3
   .circleBox
     .roundBig.round
       img.img-responsive(v-bind:src='roundBig')
@@ -402,19 +417,95 @@ export default {
   }
 }
 
-.topNarrowLine{
+.topNarrowLine,
+.topThreeLine,
+.bottomWideLine,
+.bottomNarrowLine,
+.middleWideLine{
   position: absolute;
-  top:30px;
   width: 100%;
+  & .line{
+    background-color:#35566f;
+    position: absolute;
+    left:0;
+    height: 100%;
+  }
+}
+
+.topNarrowLine{
+  top:30px;
   height: 5px;
   & .line {
     position: absolute;
     left:0;
     height:100%;
     width: 345px;
-    background-color: #fff;
-    opacity: .3;
     animation: toRight 30s -59s linear infinite;
   }
 }
+.topThreeLine{
+  top:120px;
+  height:10px;
+  & .line{
+    height: 100%;
+    width: 40px;
+    @for $i from 1 through 3{
+      &:nth-child(#{$i}){
+        left: $i*100px;
+      }
+    }
+  }
+}
+.middleWideLine{
+  top: 183px;
+  left: -20%;
+  height: 38px;
+  & .line{
+    height: 100%;
+    width: 576px;
+  }
+}
+.bottomWideLine{
+  top:489px;
+  height: 23px;
+  left: -6%;
+  & .line1{
+    width: 14px;
+    left: 9%;
+  }
+  & .line2{
+    width: 14px;
+    left: 12%;
+  }
+  & .line3{
+    width: 60px;
+    left: 17%;
+  }
+  & .line4{
+    width: 360px;
+    left: 23%;
+  }
+}
+.bottomNarrowLine{
+  top:634px;
+  height: 5px;
+  & .line1{
+    width: 29px;
+    height: 7px;
+    left:12%;
+    top:-20px;
+  }
+  & .line2{
+    width: 273px;
+    height: 100%;
+    left:13%;
+  }
+  & .line3{
+    width:63px;
+    height: 100%;
+    left: 32%;
+    top: 19px;
+  }
+}
+
 </style>
