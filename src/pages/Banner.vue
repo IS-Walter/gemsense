@@ -3,7 +3,7 @@
   .background
     .circle_group(
       v-for="c in circlesAry" 
-      v-bind:class="{opacity3: c.opacity === 3, opacity1 : c.opacity === 1, large: c.size === 'lg', small: c.size === 'sm', xLarge: c.size === 'xl'}"
+      v-bind:class="{opacity7: c.opacity === 0, opacity3: c.opacity === 3, opacity1 : c.opacity === 1, large: c.size === 'lg', small: c.size === 'sm', xLarge: c.size === 'xl'}"
       v-bind:style="getPos(c)"
       v-bind:id="'cGroup' + c._id")
       .top
@@ -354,6 +354,11 @@ export default {
       margin-top: -6px;
     }
   }
+  &.opacity7{
+    & .circle{
+      opacity: .7;
+    }
+  }
   &.opacity3{
     & .circle{
       opacity:.3;
@@ -366,24 +371,34 @@ export default {
   }
 }
 
-@for $i from 0 through 14{
-  $random: random(50) + 10;
-  #cGroup#{$i}{
-    @for $j from 1 through 6{
-      $delay: random(14) * -1s;
-      $time: random($random) * 1s;
-      & .top > .circle:nth-child(#{$j}){
-        animation: flash $time $delay linear infinite;
-      }
+@for $i from 1 through 14{
+  $time: 7s;
+  $time2: 11s;
+  $delay: random(30) * -1s;
+  $delay2: $delay + 7s;
+  #cGroup#{$i}.opacity7{
+    & .top > .circle:nth-child(#{random(6)}){
+      animation: flashSeven $time $delay linear infinite;
     }
-    @for $k from 1 through 6{
-      $id: $k + 6;
-      $delay2: random(14) * -1s;
-      $time2: random($random) * 1s;
-      & .bottom > .circle:nth-child(#{$k}){
-        animation: flash $time2 $delay2 linear infinite;
-      } 
+    & .bottom > .circle:nth-child(#{random(6)}){
+      animation: flashSeven $time2 $delay2 linear infinite;
+    } 
+  }
+  #cGroup#{$i}.opacity3{
+    & .top > .circle:nth-child(#{random(6)}){
+      animation: flashThree $time $delay linear infinite;
     }
+    & .bottom > .circle:nth-child(#{random(6)}){
+      animation: flashThree $time2 $delay2 linear infinite;
+    } 
+  }
+  #cGroup#{$i}.opacity1{
+    & .top > .circle:nth-child(#{random(6)}){
+      animation: flashOne $time $delay linear infinite;
+    }
+    & .bottom > .circle:nth-child(#{random(6)}){
+      animation: flashOne $time2 $delay2 linear infinite;
+    } 
   }
 }
 
