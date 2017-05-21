@@ -5,7 +5,7 @@
       v-for="c in circlesAry" 
       v-bind:class="{opacity3: c.opacity === 3, opacity1 : c.opacity === 1, large: c.size === 'lg', small: c.size === 'sm', xLarge: c.size === 'xl'}"
       v-bind:style="getPos(c)"
-      v-bind:data-index="c._id")
+      v-bind:id="'cGroup' + c._id")
       .top
         - var Cs1 = [1,2,3,4,5,6]
         for c in Cs1
@@ -361,6 +361,13 @@ export default {
     opacity:.1;
   }
 }
+
+@for $i from 1 through 14{
+  #cGroup#{$i}{
+    // opacity:1;
+  }
+}
+
 .topNarrowLine{
   position: absolute;
   top:30px;

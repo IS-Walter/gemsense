@@ -20,4 +20,11 @@
   100% {left: 200%; opacity: 0}
 }
 
+@keyframes flash{
+  50%{
+    background-color: #fff;
+    opacity: 1;
+  }
+}
+
 
