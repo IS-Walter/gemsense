@@ -367,18 +367,21 @@ export default {
 }
 
 @for $i from 0 through 14{
+  $random: random(50) + 10;
   #cGroup#{$i}{
     @for $j from 1 through 6{
-      $delay: $j * -0.1s;
+      $delay: random(14) * -1s;
+      $time: random($random) * 1s;
       & .top > .circle:nth-child(#{$j}){
-        animation: flash 1s $delay linear infinite;
+        animation: flash $time $delay linear infinite;
       }
     }
     @for $k from 1 through 6{
       $id: $k + 6;
-      $delay2: $id * -0.1s;
+      $delay2: random(14) * -1s;
+      $time2: random($random) * 1s;
       & .bottom > .circle:nth-child(#{$k}){
-        animation: flash 1s $delay2 linear infinite;
+        animation: flash $time2 $delay2 linear infinite;
       } 
     }
   }
