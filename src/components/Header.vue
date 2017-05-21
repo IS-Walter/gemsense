@@ -2,7 +2,8 @@
   .header.container-fluid.no_pad
     ul.col-md-12.menu
       li.col-md-3
-        a(v-link="'/'") Logo
+        a(v-link="'/'")
+          img(v-bind:src="logo")
       li.col-md-offset-1.col-md-1
         a(v-link="'/products'") Products
       li.col-md-1
@@ -22,7 +23,8 @@ export default {
   },
   data () {
     return {
-      testArray: 'hshs'
+      testArray: 'hshs',
+      logo: require('../assets/header/logo.png')
     }
   },
   computed: {
@@ -52,16 +54,24 @@ export default {
 .header{
 }
 .menu{
-  padding: 30px 68px;
+  padding: 15px 68px;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.46);
   background-image: radial-gradient(circle at 49% 47%, #00345e, #001c2e);
   & li{
     color: #fff;
+    font-size: 18px;
+    line-height: 47px;
     a{
       color: #fff;
       text-decoration: none;
       font-size: 18px;
+      line-height: 47px;
       font-family: $main_font;
+      & img{
+        height: 100%;
+        width: auto;
+        margin-bottom: -15px;
+      }
     }
   }
   .support{
