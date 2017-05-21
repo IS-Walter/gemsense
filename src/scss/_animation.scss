@@ -19,15 +19,44 @@
   11% {left: 200%; opacity: 0}
   100% {left: 200%; opacity: 0}
 }
+@keyframes flashSeven{
+  0%{
+    opacity: .7;
+  }
+  10%{
+    opacity: 1;
+  }
+  20%{
+    opacity: .7;
+  }
+  100%{
+    opacity: .7;
+  }
+}
 
-@keyframes flash{
+@keyframes flashThree{
+  0%{
+    opacity: .3;
+  }
+  10%{
+    opacity: 1;
+  }
+  20%{
+    opacity: .3;
+  }
+  100%{
+    opacity: .3;
+  }
+}
+
+@keyframes flashOne{
   0%{
     opacity: .1;
   }
   10%{
     opacity: 1;
   }
-  11%{
+  20%{
     opacity: .1;
   }
   100%{
